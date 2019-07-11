@@ -27,9 +27,12 @@ function randomNumber() {
 }
 randomNumber();
 function randomLetter() {
-    console.log(alphabet[Math.floor(Math.random() * alphabet.length)]);
+    //console.log(alphabet[Math.floor(Math.random() * alphabet.length)]);
+    const len = alphabet.length - 1;
+    const num = Math.floor(Math.random() * len);
+    return alphabet[num];
 }
-randomLetter();
+console.log(randomLetter());
 function randomFood() {
     console.log(foods[Math.floor(Math.random() * foods.length)]);
 }
