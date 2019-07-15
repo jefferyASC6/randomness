@@ -23,7 +23,7 @@ const students = [
 // END OF GLOBAL VARIABLES //
 /////////////////////////////
 function randomNumber() {
-    console.log(Math.random() * 21)
+    console.log(Math.floor(Math.random() * 21))
 }
 randomNumber();
 function randomLetter() {
@@ -33,17 +33,44 @@ function randomLetter() {
     return alphabet[num];
 }
 console.log(randomLetter());
+
 function randomFood() {
-    console.log(foods[Math.floor(Math.random() * foods.length)]);
+    //console.log(foods[Math.floor(Math.random() * foods.length)]);
+    const len = foods.length - 1;
+    const num = Math.floor(Math.random()*len);
+    return foods[num];
 }
-randomFood();
+console.log(randomFood());
+
 function randomStudent() {
-    console.log(students[Math.floor(Math.random() * students.length)]);
+   // console.log(students[Math.floor(Math.random() * students.length)]);
+   const len = students.length - 1
+   const num = Math.floor(Math.random()*len);
+   return students[num];
 }
-randomStudent();
-function randomGroup() {
-    for(let i = 0; i < 3; i++) {
-        randomStudent();
+console.log(randomStudent());
+
+// function randomGroup() {
+//     for(let i = 0; i < 3; i++) {
+//         randomStudent();
+//     }
+// }
+function randomGroup(){
+        return randomStudent();
     }
+for (let i=0; i<3; i++){
+    console.log(randomGroup());
 }
-randomGroup();
+
+// just a random number generator V
+// const multiplier = 1000000;
+
+// function rand(){
+//     const decimal = Math.random();
+//     const timesx = decimal*multiplier;
+//     const final = Math.floor(timesx);
+
+//     return final
+// }
+
+//     console.log(rand());
